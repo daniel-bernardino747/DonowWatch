@@ -32,3 +32,4 @@ while True:
                 break
     if resp == 0:
         inter.MainMenu(nexit='LOG OUT', aexit=True)
+        break
