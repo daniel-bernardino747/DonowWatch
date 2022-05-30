@@ -21,6 +21,12 @@ def listGenres(arq):
     return t
 
 
+def randomInGenre(arq, genre):
+    var = arq.loc[arq['genres'] == f'{genre}']
+    a = var.index[randint(0, len(var))]
+    return var.loc[a][1]
+
+
 if __name__ == "__main__":
     t = listGenres(indexo)
     print(t)
