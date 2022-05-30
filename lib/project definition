@@ -1,0 +1,6 @@
+Parte 01:
+[X] Escolher um banco de dados
+[X] Criar um menu que sorteie um filme
+[X] Criar o sorteador de filmes
+* Não repetir filmes
+[] Criar sorteador de acordo com o gênero
