@@ -50,18 +50,20 @@ def options(*msg, crack='Exit'):
     return n
 
 
-def optionsList(*msg, crack='Exit'):
+def optionsList(menu, crack='Return'):
     menus = list()
-    for a in msg:
+    for a in menu:
         menus.append(a)
     breakline = 1
     for i, v in enumerate(menus):
         if breakline % 2 == 0:
-            print(f'{fg.mag}{f"[{i + 1}]":>3}{fg.white} {v:24}|')
+            print(f'{fg.mag}{f"[{i + 1}]":>5}{fg.white} {v:24}|')
         else:
-            print(f'|{fg.mag}{f"[{i + 1}]":>5}{fg.white} {v:23}', end=' ')
+            print(f'|{fg.mag}{f"[{i + 1}]":>5}{fg.white} {v:21}', end=' ')
         breakline += 1
-    n = int(input(f'\n{stl.inverse}{stl.bright}{" >>> DIGITE SUA OPÇÃO AQUI:":}{stl.reset_all}{fg.white} '))
+    print(f'|{fg.yell}{f"[0]":>5} {crack.title():52}{fg.white}|')
+    print('=' * 60)
+    n = int(input(f'{stl.inverse}{stl.bright}{" >>> DIGITE SUA OPÇÃO AQUI:":}{stl.reset_all}{fg.white} '))
     return n
 
 
@@ -80,10 +82,3 @@ def SegundaryMenu(msg='MENU SEGUNDÁRIO'):
     print('=' * 60)
     print(f'{stl.bright}{msg:^60}{stl.reset_all}{fg.white}')
     print('=' * 60)
-
-
-if __name__ == "__main__":
-    MainMenu("DON'T KNOW WHAT TO WATCH?")
-    resp = optionsList('genre 1', 'genre 2', 'genre 3', 'genre 3', 'genre 3', 'genre 3', 'genre 3', 'genre 3')
-    if resp == 0:
-        MainMenu(nexit='LOG OUT', aexit=True)
