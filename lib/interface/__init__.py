@@ -67,7 +67,7 @@ def optionsList(menu, crack='Return'):
     return n
 
 
-def MainMenu(msg='MENU PRINCIPAL', nexit='EXIT', aexit=False):
+def MainMenu(msg='MAIN MENU', nexit='EXIT', aexit=False):
     print(fg.white, end='')
     print('=' * 60)
     if aexit:
@@ -77,7 +77,7 @@ def MainMenu(msg='MENU PRINCIPAL', nexit='EXIT', aexit=False):
     print('=' * 60)
 
 
-def SegundaryMenu(msg='MENU SEGUNDÁRIO'):
+def SegundaryMenu(msg='SEGUNDARY MENU'):
     print(fg.white, end='')
     print('=' * 60)
     print(f'{stl.bright}{msg:^60}{stl.reset_all}{fg.white}')
