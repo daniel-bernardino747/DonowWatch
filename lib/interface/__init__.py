@@ -46,8 +46,13 @@ def options(*msg, crack='Exit'):
         print(f'|{fg.mag}{f"[{i + 1}]":>14}{fg.white} {v:43}|')
     print(f'|{fg.red}{f"[0]":>14} {crack.title():43}{fg.white}|')
     print('=' * 60)
-    n = int(input(f'{stl.inverse}{stl.bright}{" >>> DIGITE SUA OPÇÃO AQUI:":}{stl.reset_all}{fg.white} '))
-    return n
+    try:
+        n = int(input(f'{stl.inverse}{stl.bright}{" >>> DIGITE SUA OPÇÃO AQUI:":}{stl.reset_all}{fg.white} '))
+        return n
+    except ValueError:
+        print('\n\033[91m<<<\033[97m O valor digitado não é aceito, digite um numeral entre as opções. '
+              '\033[91m>>>\033[97m\n')
+        return
 
 
 def optionsList(menu, crack='Return'):
